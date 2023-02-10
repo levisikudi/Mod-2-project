@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+
+#product-form{
+    background-color: rgb(186, 185, 185);
+    padding: 2rem 0;
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+   
+}
