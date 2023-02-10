@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const { create } = require('./models/product')
 const Product = require('./models/product')
 
 require('dotenv').config()
@@ -43,7 +44,24 @@ app.get('/', (req, res) =>{
 
 
 // /create_product - uses information from req.body to make a new product in your collection
+app.post('/create_product', async (req, res) =>{
+    console.log(req.body);
 
+    // destructure elements from clientside request
+    const {name, description, quantity, price, imageURL} = req.body
+
+    let returnedValue = await Product.create({
+        name,
+        description,
+        quantity,
+        price,
+        imageURL
+    })
+    console.log(returnedValue);
+    returnedValue ? console.log("Success"): console.log("Fail");;
+    // take the body and destructure
+   res.send("Upload Complete")
+})
 
 
 
