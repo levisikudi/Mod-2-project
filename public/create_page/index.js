@@ -49,5 +49,4 @@ submitbutton.addEventListener('click', async () =>{
         statusLog.style.color = "red"
     }
 
-
 })

@@ -35,11 +35,22 @@ app.get('/', (req, res) =>{
 
 
 // /get_products - responds with all products in your collection
-
+app.get('/get_products', async (req, res) =>{
+     // get data from backend
+     let response = await Product.find({});
+     console.log(response);
+      //send to front end
+     res.json(response)
+})
 
 
 // /get_specific_product/:product_id - responds with one specific product from your collection
+app.get('/get_specific_product/:productId', async (req, res) =>{
+    let id = req.params.productId
 
+    let response = await Product.findById(id)
+    res.send(response)
+})
 
 
 

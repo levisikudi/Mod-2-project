@@ -1,3 +1,22 @@
 h1{
     text-align: center;
 }
+
+#container{
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+
+.product-box{
+    width: 200px;
+    text-align: center;
+    background-color: beige;
+    padding: 0 15px;
+
+}
+img{
+    object-fit: contain;
+    width: 10rem;
+}
