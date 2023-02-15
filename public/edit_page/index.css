@@ -20,7 +20,8 @@ nav{
 }
 
 .product-box{
-    width: 400px;
+    width: 200px;
+    
     text-align: center;
     background-color: beige;
     padding: 0 15px;
@@ -30,9 +31,4 @@ img{
     object-fit: contain;
     width: 10rem;
     height: 15rem;
-}
-
-.hidden{
-    display: none;
-    visibility: hidden;
 }

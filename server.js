@@ -85,7 +85,13 @@ app.delete('/delete_product/:productId', async (req, res) =>{
 
 
 // /update_product - uses information from req.body to update the specific product
-
+app.put('/update_product/:productId', async (req, res) =>{
+    let id = {_id:`${req.params.productId}`}
+    let myData = req.body
+    console.log(req.body);
+    let response = await Product.findByIdAndUpdate(id, myData, {new:true})
+    res.send(req.body)
+})
 
 
 
