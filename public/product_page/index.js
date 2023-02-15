@@ -21,6 +21,23 @@ const getSingleItem = async () =>{
 }
 getSingleItem()
 
+let deleteButton = document.getElementById('delete-button')
+
+deleteButton.addEventListener('click', async () =>{
+
+    let response = await fetch(`http://localhost:4001/delete_product/${id}`, {
+        method: "delete",
+    });
+    // console.log(response);
+    
+    let parsedData = await response.json()
+    console.log(parsedData);
+    window.location.href = '../index.html'
+})
+
+
+
+
 
 // let backButton = document.getElementById('back-to-items-btn')
 // // backButton.addEventListener('click', ()=>{

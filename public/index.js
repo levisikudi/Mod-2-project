@@ -24,14 +24,14 @@ const getData = async () =>{
             imageTag.src = element.imageURL
             priceTag.textContent = `Price: $${element.price}`
             titleTag.textContent = element.name
-            titleTag.id = element._id
+            imageTag.id = element._id
             productContainer.appendChild(titleTag)
             productContainer.appendChild(imageTag)
             productContainer.appendChild(priceTag)
             container.appendChild(productContainer)
             console.log({element})
 
-            titleTag.addEventListener('click', (event) =>{
+            imageTag.addEventListener('click', (event) =>{
                 console.log({event});
                 console.log(event.target);
                 window.location.href = `./product_page?productId=${event.target.id}`

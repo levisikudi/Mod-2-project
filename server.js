@@ -77,7 +77,11 @@ app.post('/create_product', async (req, res) =>{
 
 
 // /delete_product/ - The product ID should be included in the URL as a query. Example: /delete_product/?productId=63cd55e8b260470b1c1f2cc0
-
+app.delete('/delete_product/:productId', async (req, res) =>{
+    let id = req.params.productId
+    let response = await Product.deleteOne({_id:`${id}`})
+    res.send({data: `deleted ${response.deletedCount} items.`})
+})
 
 
 // /update_product - uses information from req.body to update the specific product
