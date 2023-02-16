@@ -91,4 +91,13 @@ submitbutton.addEventListener('click', async () =>{
     
 })
  
- 
+let createItemLink = document.getElementById('create_product_page')
+let homePageLink = document.getElementById('product_page')
+
+createItemLink.addEventListener('click', () =>{
+    window.location.href = '../create_page'
+})
+
+homePageLink.addEventListener('click', ()=>{
+    window.location.href = '../'
+})

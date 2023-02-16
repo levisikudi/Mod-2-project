@@ -136,4 +136,8 @@ searchButton.addEventListener('click', async () =>{
         }
 })
 
+let createItemLink = document.getElementById('create_product_page')
+createItemLink.addEventListener('click', () =>{
+    window.location.href = '../create_page'
+})
 

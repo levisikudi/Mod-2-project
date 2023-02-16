@@ -1,5 +1,5 @@
-let homePageLink = document.getElementById('product_page')
 let submitbutton = document.getElementById('submit-button')
+let homePageLink = document.getElementById('product_page')
 
 homePageLink.addEventListener('click', ()=>{
     window.location.href = '../'
@@ -10,9 +10,10 @@ submitbutton.addEventListener('click', async () =>{
     let name = document.getElementById('product-name').value
     let description = document.getElementById('description-text').value
     let price = +document.getElementById('price').value
+    let quantity = +document.getElementById('quantity').value
     let imageURL = document.getElementById('image-URL').value
 
-    let quantity = 0;
+    
 
     //console.log(name + " " + price + " " + imageURL);
 
@@ -48,5 +49,7 @@ submitbutton.addEventListener('click', async () =>{
         statusLog.textContent = "Upload Unsuccesful"
         statusLog.style.color = "red"
     }
+
+    window.location.href = '../'
 
 })
