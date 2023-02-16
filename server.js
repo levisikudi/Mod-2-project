@@ -52,6 +52,11 @@ app.get('/get_specific_product/:productId', async (req, res) =>{
     res.send(response)
 })
 
+app.get('/search_product_by_name/:name', async (req, res) =>{
+    let response = await Product.find({ name: req.params.name })
+    res.send(response)
+
+})
 
 
 // /create_product - uses information from req.body to make a new product in your collection
@@ -93,7 +98,10 @@ app.put('/update_product/:productId', async (req, res) =>{
     res.send(req.body)
 })
 
-
+app.put('/update_one', async (req, res) =>{
+    let response = await Product.findOneAndUpdate({ _id: req.query.productId }, req.body, { new: true });
+    res.send(response);
+})
 
 app.listen(4001, () => {
     console.log(`Server is Listening on 4001`)

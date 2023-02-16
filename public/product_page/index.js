@@ -1,9 +1,10 @@
+
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 })
- let id = params.productId
- console.log(params.productId);
- 
+let id = params.productId
+console.log(params.productId);
+
 // use id to get info from collection
 
 const getSingleItem = async () =>{
@@ -32,8 +33,10 @@ const getSingleItem = async () =>{
     </div>
     `
     let buyButton = document.getElementById('buy-button')
+
     let itemQuantity = document.getElementById('quantity')
     let outOfStock = document.getElementById('out_of_stock')
+
     //if quantity = out of stock
     if(finalData.quantity <= 0){
         //hide buy button
@@ -52,9 +55,38 @@ const getSingleItem = async () =>{
         outOfStock.classList.add('hidden')
     }
     
+    
+    //Remove one functionality
+
+    buyButton.addEventListener('click', async () =>{
+    
+        let getResponse = await fetch(`http://localhost:4001/get_specific_product/${id}`)
+        console.log({getResponse});
+    
+        let finalData = await getResponse.json()
+    
+        console.log(finalData);
+    
+        let newQuantity = finalData.quantity - 1
+        
+    
+        let response = await fetch(`http://localhost:4001/update_one/?productId=${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({quantity: newQuantity})
+        })
+
+        location.reload();
+    })
+
+
 
 }
 getSingleItem()
+
+
 
 
 
@@ -85,5 +117,23 @@ homePageLink.addEventListener('click', ()=>{
     window.location.href = '../'
 })
 
+let searchButton = document.getElementById('search-button')
+
+searchButton.addEventListener('click', async () =>{
+
+    let searchContent = document.getElementById('site-search').value 
+    console.log(searchContent);
+    
+     if (searchContent !== '') {
+        let response = await fetch(`/search_product_by_name/${searchContent}`);
+        let finaldata = await response.json();
+
+        console.log(finaldata);
+
+        if (finaldata.length > 0) {
+            window.location.href = `../product_page?productId=${finaldata[0]._id}`
+        }
+        }
+})
 
 
