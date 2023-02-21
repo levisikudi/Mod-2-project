@@ -14,8 +14,11 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
     console.log(finalData);
 
+    let name = finalData.name
+
     let itemName = document.getElementById('item-name')
-    itemName.textContent = finalData.name
+    itemName.textContent = name
+
 
     /// Display objects
 
@@ -24,7 +27,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
  container.innerHTML = `
  <div id="product-form">
         <label for="name">Product name: </label>
-        <input type="text" value =${finalData.name} id="product-name"><br><br>
+        <input type="text" value =${name} id="product-name"><br><br>
 
         <label for="image">Image Url: </label>
         <input type="text" value =${finalData.imageURL} id="image-URL"><br><br>
@@ -35,7 +38,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
         <label for="price">Quantitiy: </label>
         <input type="number" value =${finalData.quantity} id="quantity"><br><br>
 
-        <label for="description">Description</label><br><br>
+        <label for="description">Description: </label><br><br>
         <textarea id="description-text"rows="4"  cols="50" > ${finalData.description} </textarea><br><br>
     </div>
  `
