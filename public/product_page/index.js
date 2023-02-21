@@ -29,9 +29,10 @@ const getSingleItem = async () =>{
     <div id='product-container'>
 
         <h1>${finalData.name}</h1><br/>
-        <span id="price">$${finalData.price}</span><br/><br/>
+        <span id="price">$${finalData.price}</span>
+        <p>(Tax not included)</p>
         <span id='out_of_stock'>${quantity}</span><br/><br/>
-        <p id="description">${finalData.description}</p>
+        <p id="description">${finalData.description}</p><br/>
         <span id='quantity'>${quantity} left </span><br/> 
         <button id="buy-button">BUY ONE</button><br/><br/>  
         <button class="manip-btn" id="delete-button">Delete item</button>

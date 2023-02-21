@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     margin: 0;
     display: grid;
@@ -57,10 +58,31 @@ nav h3:hover{
     align-items: center;
     
 }
+
 #site-search{
     border-radius: 10px;
     padding: .4rem;
 } 
+
+#search-button{
+    background-color: #0b0930;
+    border-radius: 10px;
+    height: 2rem;
+    margin-left: .3rem;
+    padding: 0.3rem 1rem;
+    transform: none;
+    transition: none;
+    border-color: #055f2b;
+}
+#search-button:hover{
+    background-color: #033518;
+}
+
+#search-button:active{
+    color: #b0a390;
+    background-color: #10773b;
+}
+
 #container{
     display: flex;
     justify-content: space-around; 
@@ -74,6 +96,7 @@ img{
     display: none;
     visibility: hidden;
 }
+
 footer{
     grid-column: span 2;
     background-color: #6D9886;
@@ -89,12 +112,12 @@ footer{
 }
 
 .manip-btn {
-  background-color: #13aa52;
-  border: 1px solid #13aa52;
+  background-color: #6D9886;
+  border: 1px solid #6D9886;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
   box-sizing: border-box;
-  color: #fff;
+  color: #F6F6F6;
   cursor: pointer;
   font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
@@ -123,8 +146,8 @@ footer{
 }
 
 #buy-button {
-  background-color: initial;
-  background-image: linear-gradient(#4b695c 0, #2e4139 100%);
+  background-color: rgb(58, 58, 255);
+  /* background-image: linear-gradient(#249a94 0, #125646 100%); */
   border-radius: 3px;
   border-style: none;
   box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;

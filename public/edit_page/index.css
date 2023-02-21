@@ -39,10 +39,41 @@ input, #description-text{
     margin-left: 0.4rem;
 }
 
+/*  */
 
-#submit-button{
+#submit-button {
+    background-color: initial;
+    background-image: linear-gradient(#F6F6F6, #F6F6F6 100%);
+    border-radius: 3px;
+    border-style: none;
+    box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+    color: #212121;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    height: 3rem;
+    outline: 0;
     text-align: center;
-}
+    transition: all .3s cubic-bezier(.05, .03, .35, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: bottom;
+    width: 10rem
+  }
+  
+  #submit-button:hover {
+    opacity: .7;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    #submit-button {
+      font-size: 14px;
+      height: 55px;
+      line-height: 55px;
+    }
+  }
+  
 
 .product-box{
     width: 200px;
