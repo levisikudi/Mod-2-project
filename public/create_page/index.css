@@ -1,6 +1,9 @@
 body{
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #D9CAB3;
+    min-height: 100vh;
 }
 
 h1{
@@ -8,15 +11,25 @@ h1{
 }
 
 #product-form{
-    background-color: rgb(186, 185, 185);
-    padding: 2rem 0;
+    background-color: transparent;
+    padding: 5rem 0;
     width: 80vw;
     text-align: center;
     margin: 0 auto;
    
 }
 nav{
-    background-color: rgb(147, 147, 147);
+    background-color: #212121;
+    color: #F6F6F6;
     display: flex;
     justify-content: space-around;
+}
+footer{
+    background-color: #6D9886;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    padding: 0.2rem;
+    width: 100vw;
 }
