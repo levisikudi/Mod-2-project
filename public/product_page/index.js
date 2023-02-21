@@ -17,21 +17,31 @@ const getSingleItem = async () =>{
 
 
     //display items
-    let container = document.getElementById('container')
+    let leftContainer = document.getElementById('left')
+    let rightSection = document.getElementById('right')
     let quantity = finalData.quantity ? finalData.quantity : 'OUT OF STOCK'
-
-    container.innerHTML = `
-    <div class="product-box">
-        <h1>${finalData.name}</h1>
+    
+    leftContainer.innerHTML = `
         <img src=${finalData.imageURL} alt=${finalData.name}><br/><br/>
-        <p id="description">${finalData.description}</p>
+    `
+
+    rightSection.innerHTML = `
+    <div id='product-container'>
+
+        <h1>${finalData.name}</h1>
         <span id="price">$${finalData.price}</span><br/><br/>
-        <button id="buy-button">BUY ONE</button><br/><br/>
-        <span id='quantity'>${quantity} left </span>
         <span id='out_of_stock'>${quantity}</span><br/>
+        <p id="description">${finalData.description}</p>
+        <span id='quantity'>${quantity} left </span>
+        <button id="buy-button">BUY ONE</button><br/><br/>  
+        <button id="delete-button">Delete item</button>
+        <button id="edit-item">Edit Product</button>
     
     </div>
+
     `
+
+
     let buyButton = document.getElementById('buy-button')
 
     let itemQuantity = document.getElementById('quantity')
@@ -54,7 +64,24 @@ const getSingleItem = async () =>{
         // hide out of stock    
         outOfStock.classList.add('hidden')
     }
+    let editButton = document.getElementById('edit-item')
+    editButton.addEventListener('click', (event) =>{
+        console.log(event.target);
+        window.location.href = `../edit_page?productId=${id}`
+    })
     
+    let deleteButton = document.getElementById('delete-button')
+    deleteButton.addEventListener('click', async () =>{
+    
+        let response = await fetch(`http://localhost:4001/delete_product/${id}`, {
+            method: "delete",
+        });
+        // console.log(response);
+        
+        let parsedData = await response.json()
+        console.log(parsedData);
+        window.location.href = '../index.html'
+    })
     
     //Remove one functionality
 
@@ -81,35 +108,10 @@ const getSingleItem = async () =>{
         location.reload();
     })
 
-
-
 }
 getSingleItem()
 
 
-
-
-
-let deleteButton = document.getElementById('delete-button')
-
-deleteButton.addEventListener('click', async () =>{
-
-    let response = await fetch(`http://localhost:4001/delete_product/${id}`, {
-        method: "delete",
-    });
-    // console.log(response);
-    
-    let parsedData = await response.json()
-    console.log(parsedData);
-    window.location.href = '../index.html'
-})
-
-let editButton = document.getElementById('edit-item')
-
-editButton.addEventListener('click', (event) =>{
-    console.log(event.target);
-    window.location.href = `../edit_page?productId=${id}`
-})
 
 
 let homePageLink = document.getElementById('product_page')

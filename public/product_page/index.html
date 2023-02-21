@@ -7,26 +7,41 @@
     <title>Product Page</title>
     <script defer src="./index.js"></script>
     <link rel="stylesheet" href="./index.css">
+
+    <!-- // font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+ 
 </head>
+
 <body>
     <nav>
         <h3 id="product_page">Home</h3> 
         <h3 id="create_product_page">Create Item</h3> 
-        <input type="search" placeholder="Search Product" id="site-search"><button id="search-button">Search</button>
-        
+
+        <div id="search-wrapper">
+            <input type="search" placeholder="Search Product" id="site-search"><button id="search-button">Search</button>
+        </div>
     </nav>
 
-    <div id="container">
+ 
 
-    </div>
-
-    <div id="buttons">
-
-        <button id="delete-button">Delete item</button>
-   
-        <button id="edit-item">Edit Product</button>
+        <div id="left">
+            <div id="container"></div>
+        </div>
     
-    </div>
+        <div id="right">
+            <!-- <button id="delete-button">Delte item</button>
+            <button id="edit-item">Edit Product</button> -->
+        </div>
+
+    
+
+    <footer>
+        <p>Made with love by Sikudi</p>
+    </footer>
+    
 
 </body>
 </html>
