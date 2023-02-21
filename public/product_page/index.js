@@ -28,14 +28,14 @@ const getSingleItem = async () =>{
     rightSection.innerHTML = `
     <div id='product-container'>
 
-        <h1>${finalData.name}</h1>
+        <h1>${finalData.name}</h1><br/>
         <span id="price">$${finalData.price}</span><br/><br/>
-        <span id='out_of_stock'>${quantity}</span><br/>
+        <span id='out_of_stock'>${quantity}</span><br/><br/>
         <p id="description">${finalData.description}</p>
-        <span id='quantity'>${quantity} left </span>
+        <span id='quantity'>${quantity} left </span><br/> 
         <button id="buy-button">BUY ONE</button><br/><br/>  
-        <button id="delete-button">Delete item</button>
-        <button id="edit-item">Edit Product</button>
+        <button class="manip-btn" id="delete-button">Delete item</button>
+        <button class="manip-btn" id="edit-item">Edit Product</button>
     
     </div>
 
